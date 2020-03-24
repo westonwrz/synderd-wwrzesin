@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weston Wrzesinski - Project 6 - Register</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'synerd/styles.css' %}">
+        <script src="{% static 'synerd/scripts.js' %}"></script>
+    </head>
+
+    <body onload="currentSlide(1); currentTab(1);">
+        <div class="whitebackground">
+        <header>
+            <div id="topnav">
+                <div id="purpose">
+                    <div class="fontstyle">Let's Serve Purposefully</div><br><button id="donatebtn">DONATE</button><br><br>
+                    <input type="text" id="searchbox"></input>
+                    <button id="searchbtn" onclick="search();">Search</button>&nbsp;
+                    <a href="{% url 'login' %}">Sign In</a> | <a href="{% url 'register' %}">Join Us</a>
+                </div>
+            </div>
+
+            <div id="titlecontainer">
+                <a href="{% url 'home' %}" id="titlelink">
+                    <img src="{% static 'synerd/logo.png' %}" alt="synerD Logo">
+                </a>
+                <h2>Synergy of Diaspora</h2>
+            </div>
+
+            <div>
+            <nav>
+                <a href="">ABOUT</a> | 
+                <a href="">CONTACT</a> |
+                <a href="">GALLERIES</a> |
+                <a href="">OUR WORK</a> |
+                <a href="">MEMBERS</a> |
+                <a href="">RESOURCES</a>
+            </nav>
+            </div>
+        </header>
+    
+    <form>
+        <div class="loginform">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" class="userfield" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <label for="fname"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="fname" class="userfield" required>
+
+            <label for="mname"><b>Middle Name</b></label>
+            <input type="text" placeholder="Enter Middle Name" name="mname" class="userfield" optional>
+
+            <label for="lname"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lname" class="userfield" required>
+
+            <label for="dob"><b>Date of Birth</b></label>
+            <input type="date" placeholder="01/01/1990" name="dob" class="userfield" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="email@email.com" name="email" class="userfield" required>
+
+            <label for="hphone"><b>Home Phone</b></label>
+            <input type="text" placeholder="555-555-5555" name="hphone" class="userfield" required>
+
+            <label for="cphone"><b>Cell Phone</b></label>
+            <input type="text" placeholder="555-555-5555" name="cphone" class="userfield" optional>
+
+            <label for="addr1"><b>Address 1</b></label>
+            <input type="text" placeholder="Address 1" name="addr1" class="userfield" required>
+
+            <label for="addr2"><b>Address 2</b></label>
+            <input type="text" placeholder="Address 2" name="addr2" class="userfield" optional>
+
+            <label for="city"><b>City</b></label>
+            <input type="text" placeholder="City" name="city" class="userfield" required>
+
+            <label for="state"><b>State</b></label>
+            <input type="text" placeholder="State" name="state" class="userfield" required>
+
+            <label for="zip"><b>Zip Code</b></label>
+            <input type="text" placeholder="Zip Code" name="zip" class="userfield" required>
+
+            <label for="ename"><b>Employer Name</b></label>
+            <input type="text" placeholder="Employer Name" name="ename" class="userfield" optional>
+
+            <label for="eaddr1"><b>Employer Address 1</b></label>
+            <input type="text" placeholder="Employer Address 1" name="eaddr1" class="userfield" optional>
+
+            <label for="eaddr2"><b>Employer Address 2</b></label>
+            <input type="text" placeholder="Employer Address 2" name="eaddr2" class="userfield" optional>
+
+            <label for="ecity"><b>Employer City</b></label>
+            <input type="text" placeholder="Employer City" name="ecity" class="userfield" optional>
+
+            <label for="ezip"><b>Employer Zip</b></label>
+            <input type="text" placeholder="Employer Zip" name="ezip" class="userfield" optional>
+
+            <label for="ephone"><b>Employer Phone</b></label>
+            <input type="text" placeholder="Emplyer Phone" name="ephone" class="userfield" optional>
+
+            <label for="jobtitle"><b>Job Title</b></label>
+            <input type="text" placeholder="Job Title" name="jobtitle" class="userfield" optional>
+
+            <label for="gidtype"><b>Government ID Type</b></label>
+            <input type="text" placeholder="Government ID Type" name="gidtype" class="userfield" optional>
+
+            <label for="gidnumber"><b>Government ID Number</b></label>
+            <input type="text" placeholder="Government ID Number" name="gidnumber" class="userfield" optional>
+
+            <label for="gidissuecountry"><b>Government ID Issue Country</b></label>
+            <input type="text" placeholder="Country" name="gidissuecountry" class="userfield" optional>
+
+            <label for="gidissuestate"><b>Government ID Issue State</b></label>
+            <input type="text" placeholder="State" name="gidissuestate" class="userfield" optional>
+
+            <label for="gidissuedate"><b>Government ID Issue Date</b></label>
+            <input type="date" placeholder="01/01/2001" name="gidissuedate" class="userfield" optional>
+            
+            <label for="gidexpiredate"><b>Government ID Expire Date</b></label>
+            <input type="text" placeholder="01/01/2001" name="gidexpiredate" class="userfield" optional>
+
+            <button type="submit" class="loginbutton">Register</button>
+        </div>
+    </form>
+
+        <footer>
+            <div class="address">
+                <b>synerD</b><br>
+                555 Simple St<br>
+                Townville, AR 33443<br>
+                555-555-5555<br>
+                contact@synerD.com<br>
+                www.synerD.com<br>
+            </div>
+            <div class="bottomnav1">
+                <a href="">Get Involved</a><br><br>
+                <a href="">Blog</a><br><br>
+                <a href="">Ways to Give</a><br>
+            </div>
+            <div class="bottomnav2">
+                <a href="">About Us</a><br><br>
+                <a href="">Revenues</a><br><br>
+                <a href="">Expenditures</a><br>
+            </div>
+            <br><br><br><br>
+
+            <div class="bottomnav3">
+                <a href="">Site Map</a> |&nbsp;
+                <a href="">Terms & Condtions</a> |&nbsp;
+                <a href="">Privacy Policy</a> |&nbsp;
+                Copyright &copy; 2019
+            </div>
+        </footer>
+    </div>    
+    </body>
+</html>

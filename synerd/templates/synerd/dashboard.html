@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weston Wrzesinski - Project 6 - Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'synerd/styles.css' %}">
+        <script src="{% static 'synerd/scripts.js' %}"></script>
+    </head>
+
+    <body onload="currentSlide(1); currentTab(1);">
+        <div class="whitebackground">
+        <header>
+            <div id="topnav">
+                <div id="purpose">
+                    <div class="fontstyle">Let's Serve Purposefully</div><br><button id="donatebtn">DONATE</button><br><br>
+                    <input type="text" id="searchbox"></input>
+                    <button id="searchbtn" onclick="search();">Search</button>&nbsp;
+                    <a href="{% url 'login' %}">Sign In</a> | <a href="{% url 'register' %}">Join Us</a>
+                </div>
+            </div>
+
+            <div id="titlecontainer">
+                <a href="{% url 'home' %}" id="titlelink">
+                    <img src="{% static 'synerd/logo.png' %}" alt="synerD Logo">
+                </a>
+                <h2>Synergy of Diaspora</h2>
+            </div>
+
+            <div>
+            <nav>
+                <a href="">ABOUT</a> | 
+                <a href="">CONTACT</a> |
+                <a href="">GALLERIES</a> |
+                <a href="">OUR WORK</a> |
+                <a href="">MEMBERS</a> |
+                <a href="">RESOURCES</a>
+            </nav>
+            </div>
+        </header>
+
+        <form>
+            <div class="loginform">
+                <h2>Add Office</h2>
+                <label for="oname"><b>Office Name</b></label>
+                <input type="text" placeholder="Enter Office Name" name="oname" class="userfield" required>
+    
+                <label for="ocode"><b>Office Code</b></label>
+                <input type="text" placeholder="Enter Office Code" name="ocode" class="userfield" required>
+
+                <label for="attribution"><b>Attribution</b></label>
+                <input type="text" placeholder="Enter Attribution" name="attribution" class="userfield" required>
+    
+                <button type="submit" class="loginbutton">Create Office</button>
+            </div>
+        </form><br>
+
+        <form>
+            <div class="loginform">
+                <h2>Add Officer</h2>
+                <label for="subid"><b>Subscriber ID</b></label>
+                <input type="text" placeholder="Enter Subscriber ID" name="subid" class="userfield" required>
+
+                <label for="ocode"><b>Office Code</b></label>
+                <input type="text" placeholder="Enter Office Code" name="ocode" class="userfield" required>
+
+                <label for="sdate"><b>Start Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="sdate" class="userfield" required>
+
+                <label for="edate"><b>End Date</b></label>
+                <input type="text" placeholder="01/01/2001" name="edate" class="userfield" optional>
+    
+                <button type="submit" class="loginbutton">Create Officer</button>
+            </div>
+        </form><br>
+
+        <form>
+            <div class="loginform">
+                <h2>Add Organization</h2>
+                <label for="orgcode"><b>Organization Code</b></label>
+                <input type="text" placeholder="Enter Organization Code" name="orgcode" class="userfield" required>
+
+                <label for="orgname"><b>Organization Name</b></label>
+                <input type="text" placeholder="Enter Organization Name" name="orgname" class="userfield" required>
+
+                <label for="description"><b>Description</b></label>
+                <input type="text" placeholder="Enter Description" name="description" class="userfield" required>
+
+                <label for="jdate"><b>Date Joined</b></label>
+                <input type="text" placeholder="Enter Date Joined" name="jdate" class="userfield" required>
+
+                <label for="orgaddr1"><b>Address 1</b></label>
+                <input type="text" placeholder="Enter Address 1" name="orgaddr1" class="userfield" required>
+
+                <label for="orgaddr2"><b>Address 2</b></label>
+                <input type="text" placeholder="Enter Address 2" name="orgaddr2" class="userfield" optional>
+
+                <label for="orgcity"><b>City</b></label>
+                <input type="text" placeholder="Enter City" name="orgcity" class="userfield" required>
+
+                <label for="orgstate"><b>State</b></label>
+                <input type="text" placeholder="Enter State" name="orgstate" class="userfield" required>
+
+                <label for="orgzip"><b>Zip Code</b></label>
+                <input type="text" placeholder="Enter Zip Code" name="orgzip" class="userfield" required>
+
+                <label for="orgphone"><b>Phone Number</b></label>
+                <input type="text" placeholder="555-555-5555" name="orgphone" class="userfield" required>
+    
+                <button type="submit" class="loginbutton">Create Organization</button>
+            </div>
+        </form>
+
+        <form>
+            
+            <div class="loginform">
+                <h2>Add Organization Member</h2>
+                <label for="orgcode"><b>Organization Code</b></label>
+                <input type="text" placeholder="Enter Organization Code" name="orgcode" class="userfield" required>
+    
+                <label for="subid"><b>Subscriber ID</b></label>
+                <input type="text" placeholder="Enter Subscriber ID" name="subid" class="userfield" required>
+                
+                <label for="memsdate"><b>Membership Start Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="memsdate" class="userfield" required>
+
+                <label for="memedate"><b>Membership End Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="memedate" class="userfield" optional>
+
+                <label for="ncountry"><b>Native Country</b></label>
+                <input type="text" placeholder="Enter Native Country" name="ncountry" class="userfield" required>
+
+                <label for="citizenship"><b>Citizenship</b></label>
+                <input type="text" placeholder="Enter Citizenship" name="orgcode" class="userfield" required>
+
+                <label for="delegate"><b>Is a delegate?</b></label>
+                <input type="text" placeholder="Enter Yes/No" name="delegate" class="userfield" required>
+
+                <button type="submit" class="loginbutton">Create Organization Member</button>
+            </div>
+        </form>
+
+        <form>
+            
+            <div class="loginform">
+                <h2>Add Subscriber</h2>
+                <label for="subid"><b>Subscriber ID</b></label>
+                <input type="text" placeholder="Enter Subscriber ID" name="subid" class="userfield" required>
+    
+                <label for="scode"><b>Service Code</b></label>
+                <input type="text" placeholder="Enter Service Code" name="scode" class="userfield" required>
+
+                <label for="subrdate"><b>Subsription Request Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="subrdate" class="userfield" required>
+
+                <label for="subsdate"><b>Subscription Start Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="subsdate" class="userfield" required>
+
+                <label for="subedate"><b>Subscription End Date</b></label>
+                <input type="date" placeholder="01/01/2001" name="subedate" class="userfield" optional>
+
+                <label for="motif"><b>Motif of Cancellation</b></label>
+                <input type="text" placeholder="Enter Motif of Cancellation" name="motif" class="userfield" optional>
+
+                <label for="subtype"><b>Subscription Type</b></label>
+                <input type="text" placeholder="Enter Subscription Type" name="subtype" class="userfield" required>
+
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" class="userfield" required>
+
+                <label for="bid"><b>Beneficiary ID</b></label>
+                <input type="text" placeholder="Enter Beneficiary ID" name="bid" class="userfield" required>
+
+                <button type="submit" class="loginbutton">Create Subscriber</button>
+            </div>
+        </form>
+
+        <footer>
+            <div class="address">
+                <b>synerD</b><br>
+                555 Simple St<br>
+                Townville, AR 33443<br>
+                555-555-5555<br>
+                contact@synerD.com<br>
+                www.synerD.com<br>
+            </div>
+            <div class="bottomnav1">
+                <a href="">Get Involved</a><br><br>
+                <a href="">Blog</a><br><br>
+                <a href="">Ways to Give</a><br>
+            </div>
+            <div class="bottomnav2">
+                <a href="">About Us</a><br><br>
+                <a href="">Revenues</a><br><br>
+                <a href="">Expenditures</a><br>
+            </div>
+            <br><br><br><br>
+
+            <div class="bottomnav3">
+                <a href="">Site Map</a> |&nbsp;
+                <a href="">Terms & Condtions</a> |&nbsp;
+                <a href="">Privacy Policy</a> |&nbsp;
+                Copyright &copy; 2019
+            </div>
+        </footer>
+    </div>    
+    </body>
+</html>

@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weston Wrzesinski - Project 6 - Home</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'synerd/styles.css' %}">
+        <script src="{% static 'synerd/scripts.js' %}"></script>
+    </head>
+
+    <body onload="currentSlide(1); currentTab(1);">
+        <div class="whitebackground">
+        <header>
+            <div id="topnav">
+                <div id="purpose">
+                    <div class="fontstyle">Let's Serve Purposefully</div><br><button id="donatebtn">DONATE</button><br><br>
+                    <input type="text" id="searchbox"></input>
+                    <button id="searchbtn" onclick="search();">Search</button>&nbsp;
+                    <a href="{% url 'login' %}">Sign In</a> | <a href="{% url 'register' %}">Join Us</a>
+                </div>
+            </div>
+
+            <div id="titlecontainer">
+                <a href="{% url 'home' %}" id="titlelink">
+                    <img src="{% static 'synerd/logo.png' %}" alt="synerD Logo">
+                </a>
+                <h2>Synergy of Diaspora</h2>
+            </div>
+
+            <div>
+            <nav>
+                <a href="">ABOUT</a> | 
+                <a href="">CONTACT</a> |
+                <a href="">GALLERIES</a> |
+                <a href="">OUR WORK</a> |
+                <a href="">MEMBERS</a> |
+                <a href="">RESOURCES</a>
+            </nav>
+            </div>
+        </header>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="{% static 'synerd/img1.jpg' %}" style="height:400px; width:100%">
+            <div class="text">Donate Today with synerD!</div>
+        </div>
+  
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="{% static 'synerd/img2.jpg' %}" style="height: 400px; width:100%;">
+            <div class="text">Donate Today with synerD!</div>
+        </div>
+  
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="{% static 'synerd/img3.jpg' %}" style="height: 400px; width:100%">
+            <div class="text">Donate Today with synerD!</div>
+        </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <br><br>
+
+  <div>
+  <div class="tabselect">
+    <span class="tab" onclick="currentTab(1)">ID Protection</span>
+    <span class="tab" onclick="currentTab(2)">Corpses Repatriation</span>
+    <span class="tab" onclick="currentTab(3)">Assistance Programs</span>
+    <br><br>
+    <div class="myTabs fade">
+        <div class="tabtext">
+            TAB 1 TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    <div class="myTabs fade">
+        <div class="tabtext">
+            TAB 2 TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    <div class="myTabs fade">
+        <div class="tabtext">
+            TAB 3 TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+  </div>
+
+  <div class="news">
+      <h2>What's New?</h2>
+      <h3>Announcements</h3>
+      <div class="newsspot">
+          <li>12/8/2019 - A test Announcements</li>
+          <li>12/9/2019 - A test Announcements</li>
+          <li>12/10/2019 - A test Announcements</li>
+      </div>
+      <h3>Feature News</h3>
+      <div class="newsspot">
+        <li>Feature news 1</li>
+        <li>Feature news 2</li>
+        <li>Feature news 3</li>
+      </div>
+  </div>
+  </div>
+
+  <div class="featureactivity">
+      <h1>Feature Activity</h1>
+      FEATURE ACTIVITY TEST Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   </div>
+
+        <footer>
+            <div class="address">
+                <b>synerD</b><br>
+                555 Simple St<br>
+                Townville, AR 33443<br>
+                555-555-5555<br>
+                contact@synerD.com<br>
+                www.synerD.com<br>
+            </div>
+            <div class="bottomnav1">
+                <a href="">Get Involved</a><br><br>
+                <a href="">Blog</a><br><br>
+                <a href="">Ways to Give</a><br>
+            </div>
+            <div class="bottomnav2">
+                <a href="">About Us</a><br><br>
+                <a href="">Revenues</a><br><br>
+                <a href="">Expenditures</a><br>
+            </div>
+            <br><br><br><br>
+
+            <div class="bottomnav3">
+                <a href="">Site Map</a> |&nbsp;
+                <a href="">Terms & Condtions</a> |&nbsp;
+                <a href="">Privacy Policy</a> |&nbsp;
+                Copyright &copy; 2019
+            </div>
+        </footer>
+    </div>    
+    </body>
+</html>

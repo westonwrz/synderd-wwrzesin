@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weston Wrzesinski - Project 6 - Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'synerd/styles.css' %}">
+        <script src="{% static 'synerd/scripts.js' %}"></script>
+    </head>
+
+    <body onload="currentSlide(1); currentTab(1);">
+        <div class="whitebackground">
+        <header>
+            <div id="topnav">
+                <div id="purpose">
+                    <div class="fontstyle">Let's Serve Purposefully</div><br><button id="donatebtn">DONATE</button><br><br>
+                    <input type="text" id="searchbox"></input>
+                    <button id="searchbtn" onclick="search();">Search</button>&nbsp;
+                    <a href="{% url 'login' %}">Sign In</a> | <a href="{% url 'register' %}">Join Us</a>
+                </div>
+            </div>
+
+            <div id="titlecontainer">
+                <a href="{% url 'home' %}" id="titlelink">
+                    <img src="{% static 'synerd/logo.png' %}" alt="synerD Logo">
+                </a>
+                <h2>Synergy of Diaspora</h2>
+            </div>
+
+            <div>
+            <nav>
+                <a href="">ABOUT</a> | 
+                <a href="">CONTACT</a> |
+                <a href="">GALLERIES</a> |
+                <a href="">OUR WORK</a> |
+                <a href="">MEMBERS</a> |
+                <a href="">RESOURCES</a>
+            </nav>
+            </div>
+        </header>
+    
+    <form>
+        <div class="loginform">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" class="userfield" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="loginbutton">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember">Remember Me
+            </label>
+        </div>
+    </form>
+
+        <footer>
+            <div class="address">
+                <b>synerD</b><br>
+                555 Simple St<br>
+                Townville, AR 33443<br>
+                555-555-5555<br>
+                contact@synerD.com<br>
+                www.synerD.com<br>
+            </div>
+            <div class="bottomnav1">
+                <a href="">Get Involved</a><br><br>
+                <a href="">Blog</a><br><br>
+                <a href="">Ways to Give</a><br>
+            </div>
+            <div class="bottomnav2">
+                <a href="">About Us</a><br><br>
+                <a href="">Revenues</a><br><br>
+                <a href="">Expenditures</a><br>
+            </div>
+            <br><br><br><br>
+
+            <div class="bottomnav3">
+                <a href="">Site Map</a> |&nbsp;
+                <a href="">Terms & Condtions</a> |&nbsp;
+                <a href="">Privacy Policy</a> |&nbsp;
+                Copyright &copy; 2019
+            </div>
+        </footer>
+    </div>    
+    </body>
+</html>
