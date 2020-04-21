@@ -19,6 +19,8 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('synerd.urls')),
+    path('', include('backend.urls')),
+    #path('api/', include('courses.api.url', namespace='api')), #CHANGE ME
     #path('home/', include('home.urls')),
     #path('login/', include('login.urls')),
     #path('dashboard/', include('dashboard.urls'))
