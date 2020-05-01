@@ -281,3 +281,24 @@ input[type=password] {
   border: unset;
   border-radius: unset;
 }
+
+#subtable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#subtable td, #subtable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#subtable tr:nth-child(even){background-color: #f2f2f2;}
+#subtable tr:hover {background-color: #ddd;}
+
+#subtable th {
+  padding-top:12px;
+  padding-bottom:12px;
+  text-align: left;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}

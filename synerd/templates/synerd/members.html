@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Weston Wrzesinski - Project 6 - Login</title>
+        <title>Weston Wrzesinski - Project 9 Members</title>
         <link rel="stylesheet" type="text/css" href="{% static 'synerd/styles.css' %}">
         <script src="{% static 'synerd/scripts.js' %}"></script>
     </head>
@@ -38,20 +38,24 @@
             </div>
         </header>
     
-    <form>
-        <div class="loginform">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" class="userfield" required>
+<!-- TABLE CONTENT GOES HERE -->
+        <table id="subtable">
+            <tr>
+                <th>Subscriber ID</th>
+                <th>Username</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+            </tr>
+            {% for item in getsubscriber %}
+            <tr>
+                <td>{{ item.subscriberID }}</td>
+                <td>{{ item.username }}</td>
+                <td>{{ item.startdate }}</td>
+                <td>{{ item.enddate }}</td>
+            </tr>
+            {% endfor %}
+        </table>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" class="loginbutton">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember">Remember Me
-            </label>
-        </div>
-    </form>
 
         <footer>
             <div class="address">

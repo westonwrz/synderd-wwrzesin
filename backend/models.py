@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class UserInfo(models.Model):
     username = models.CharField(primary_key=True, max_length=64)
+    password = models.CharField(max_length=64)
     firstname = models.CharField(max_length=64)
     middlename = models.CharField(max_length=64)
     lastname = models.CharField(max_length=64)
@@ -22,7 +23,7 @@ class SubscriptionType(models.Model):
     subscriptiontypename = models.CharField(max_length=64)
 
     def __str__(self):
-        return self.subscriptiontypecode
+        return self.subscriptiontypename
 
 class Service(models.Model):
     servicecode = models.IntegerField(primary_key=True)
@@ -32,7 +33,7 @@ class Service(models.Model):
     allocation = models.CharField(max_length=64)
 
     def __str__(self):
-        return self.servicecode
+        return self.servicename
 
 class Office(models.Model):
     officecode = models.IntegerField(primary_key=True)
@@ -40,7 +41,7 @@ class Office(models.Model):
     attribution = models.CharField(max_length=64)
 
     def __str__(self):
-        return self.officecode
+        return self.officename
 
 class Organization(models.Model):
     organizationcode = models.IntegerField(primary_key=True)
@@ -52,10 +53,10 @@ class Organization(models.Model):
     city = models.CharField(max_length=64)
     state = models.CharField(max_length=64)
     zipcode = models.IntegerField()
-    phonenumber = models.IntegerField()
+    phonenumber = models.CharField(max_length=64)
 
     def __str__(self):
-        return self.organizationcode
+        return self.organizationname
 
 class Subscriber(models.Model):
     subscriberID = models.IntegerField(primary_key=True)
@@ -68,8 +69,8 @@ class Subscriber(models.Model):
     motifofcancellation = models.CharField(max_length=64)
     beneficiaryID = models.IntegerField()
 
-    def __str__(self):
-        return self.subscriberID
+#    def __str__(self):
+#        return UserInfo.username
 
 class TransferredSubscription(models.Model):
     transferID = models.IntegerField(primary_key=True)
@@ -79,8 +80,8 @@ class TransferredSubscription(models.Model):
     transferdate = models.DateField()
     subscriberID = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.transferID
+#    def __str__(self):
+#        return self.transferfrom
 
 class Officer(models.Model):
     officecode = models.ForeignKey(Office, on_delete=models.CASCADE)
@@ -88,8 +89,8 @@ class Officer(models.Model):
     startdate = models.DateField()
     enddate = models.DateField()
 
-    def __str__(self):
-        return self.officecode
+#    def __str__(self):
+#        return Subscriber.username
 
 class OrganizationMember(models.Model):
     organizationcode = models.ForeignKey(Organization, on_delete=models.CASCADE)
@@ -100,5 +101,5 @@ class OrganizationMember(models.Model):
     citizenship = models.CharField(max_length=64)
     isdelegate = models.CharField(max_length=64)
 
-    def __str__(self):
-        return self.organizationcode
+#    def __str__(self):
+#        return Subscriber.username
